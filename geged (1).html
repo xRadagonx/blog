@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life's Verse</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50; /* Light grey background */
+            color: #e0e0e0; /* Dark grey text */
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #726a95, #9b6c6c); /* Dark lavender to peach gradient */
+            color: #ffffff; /* White text */
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 3px solid #ffffff; /* White border */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        section {
+            margin: 30px;
+            padding: 30px;
+            background-color: #34495e; /* White background */
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide all sections by default */
+        }
+
+        #about { display: block; } /* Show the About Me section by default */
+
+        h2 {
+            color: #9b59b6; /* Dark lavender heading */
+        }
+
+        h3 {
+            color: #e67e22; /* Dark peach subheading */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #3498db; /* Light lavender link */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #2980b9; /* Darker lavender on hover */
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        /* Add new styles for enhancements */
+        nav {
+            background-color: #2c3e50; /* Dark lavender navigation */
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        nav a {
+            color: #e0e0e0; /* White navigation link */
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #bdc3c7; /* Lighter lavender on hover */
+        }
+
+        .collapse-section {
+            cursor: pointer;
+        }
+
+        .nav-arrows {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #726a95; /* Dark lavender arrow */
+            font-size: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 999; /* Ensure arrows are on top */
+        }
+
+        .nav-arrows:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #9b6c6c; /* Peach arrow on hover */
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .page-number {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #726a95; /* Dark lavender page number */
+            font-size: 18px;
+        }
+
+        /* Enhanced Styles */
+        body {
+            background-color: #2c3e50; /* Light grey background */
+            color: #e0e0e0; /* Dark grey text */
+        }
+
+        header {
+            background: linear-gradient(135deg, #726a95, #9b6c6c); /* Dark lavender to peach gradient */
+            color: #ffffff; /* White text */
+            padding: 70px 0;
+            margin-bottom: 30px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #2c3e50; /* Dark lavender navigation */
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            background-color: #34495e; /* White background */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #9b59b6; /* Dark lavender heading */
+        }
+
+        .tab-pane {
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #9b6c6c; /* Peach button */
+            border-color: #9b6c6c;
+        }
+
+        .btn-primary:hover {
+            background-color: #8c5e5e; /* Darker peach on hover */
+            border-color: #8c5e5e;
+        }
+ /* Velvety Effect */
+        header, section {
+            background-color: #2c3e50;
+            background-image: linear-gradient(45deg, #4a4e69, #2b303a);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>"Life's Verse: Learning and Dreams"</h1>
+         <h5>A Blog By Tushar</h5>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my blog! I'm Tushar, and I am a student at MRCET with a keen interest in technology and commerce. This blog serves as a creative outlet for me, intertwining academic writing with personal reflections. Amidst lectures and late-night study sessions, I find solace in activities such as immersing myself in the captivating narratives of movies, diving into the vibrant world of comics, and enjoying the rhythm of music, seamlessly blending textbooks with creativity. You will have a glimpse of my life as I share insights, reflections, and occasional bursts of inspiration. This blog transcends mere digital space; it fosters a community for students, inquisitive minds, and individuals seeking a blend of academic rigor and personal growth. Let's embark on an exploration of the captivating tapestry of university life together. Thank you for being part
+
+ of this crusade!</p>
+        </section>
+
+        <section id="contact" class="contact-info">
+            <h2>Contact Information</h2>
+              <div >
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:your.email@example.com">21n31a66j3@mrcet.ac.in</a></li>
+                    <li><strong>Github:</strong> <a href="https://github.com/xRadagonx" target="_blank">xRadagonx</a></li>
+                    <li><strong>Phone:</strong> 7247XXXXXX</li>
+                </ul>
+            </div>
+            <button class="btn btn-primary mb-3 collapse-section" data-toggle="collapse" data-target="#contactDetails">Show More Contact Info</button>
+            <div id="contactDetails" class="collapse">
+                <ul>
+                    <li><strong>Address:</strong> Bahadurpally, Secunderabad - 500043</a></li>
+                    <li><strong>College Address:</strong> Maisammaguda, Dullapally, Secunderabad - 500100</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Technical Skills:</strong> Good with python, java, javascript, c programming language</li>
+                <li><strong>Soft Skills:</strong> My soft skills include leadership, time management, problem solving, and teamwork and collaboration and in addition these, I possess qualities such as adaptability, effective communication, attention to detail, and resilience.</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <article>
+                <h4>Message Minder</h4>
+                <p><strong>Role:</strong> Designer</p>
+                <p><strong>Description:</strong> "Message Minder" is an innovative application designed to revolutionize communication through scheduled messaging. With advanced scheduling options and a focus on security, it streamlines messaging processes for individuals and businesses alike. Its user-friendly interface and productivity-enhancing tools contribute to a seamless experience, optimizing communication strategies and ensuring timely message delivery.</p>
+            </article>
+            <article>
+                <h4>NFT Marketplace</h4>
+                <p><strong>Role:</strong> Backend Development</p>
+                <p><strong>Description:</strong> This project develops a decentralized application (dApp) utilizing blockchain technology, specifically focusing on Non-Fungible Tokens (NFTs) for secure digital asset management. Implemented with features such as secure wallet connections, NFT image generation, minting, marketplace, and profile management, the project showcases the practical application of blockchain in this domain. By leveraging the Goerli testnet, Solidity-based smart contracts, and IPFS for decentralized storage, the project offers insights into the transformative potential of blockchain technology in digital asset management.</p>
+            </article>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies and Interests</h2>
+            <p>In my leisure time, I enjoy immersing myself in various creative pursuits such as listening to albums, reviewing movies, crafting props, and sketching.</p>
+        </section>
+    </div>
+
+    <nav>
+        <div class="nav-arrows prev">&lt;</div>
+        <div class="nav-arrows next">&gt;</div>
+        <div class="page-number">1</div>
+    </nav>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var currentSection = 0; // Initialize current section index
+
+            $('.nav-arrows').click(function () {
+                var sections = $('section'); // Get all sections
+                var numSections = sections.length; // Get the total number of sections
+
+                if ($(this).hasClass('prev')) {
+                    currentSection = (currentSection - 1 + numSections) % numSections; // Move to previous section
+                } else if ($(this).hasClass('next')) {
+                    currentSection = (currentSection + 1) % numSections; // Move to next section
+                }
+
+                // Hide all sections and show the current one
+                sections.hide().eq(currentSection).show();
+
+                // Update page number
+                $('.page-number').text(currentSection + 1);
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                var target = $($.attr(this, 'href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 500);
+                }
+            });
+
+            // Toggle collapse for contact details
+            $('.collapse-section').click(function () {
+                $(this).text(function (i, text) {
+                    return text === "Show More Contact Info" ? "Hide Extra Contact Info" : "Show More Contact Info";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
